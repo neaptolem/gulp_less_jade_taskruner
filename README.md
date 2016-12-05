@@ -1,1 +1,15 @@
-# gulp_less_jade_taskruner
+1. `npm i`
+2. add dependencies to the `node_modules` and `dependencies.json` for example 
+```
+   "js":["./node_modules/jquery/dist/jquery.js"
+ 
+   ],
+   "css":["./node_modules/some/some.css"
+ 
+   ],
+   "fonts":[
+    //some fonts
+   ]
+ }
+```
+3. `npm start`

@@ -46,9 +46,7 @@ gulp.task('jade', function() {
 
 //add JS library for build
 gulp.task('scripts', function() {
-    return gulp.src([
-            // './app/libs/modernizr/modernizr.js',
-        ])
+    return gulp.src(require('./dependencies.json').js)
         .pipe(concat('libs.js'))
         // .pipe(uglify()) //Minify libs.js
         .pipe(gulp.dest('./app/js/'));
@@ -56,20 +54,14 @@ gulp.task('scripts', function() {
 
 //add styles library
 gulp.task('styles:libs', function() {
-    return gulp.src([
-            // './node_modules/bootstrap/dist/css/bootstrap.min.css',
-            // './node_modules/font-awesome/css/font-awesome.min.css',
-        ])
+    return gulp.src(require('./dependencies.json').css)
         .pipe(concat('libs.css'))
         .pipe(gulp.dest('./app/css/'));
 });
 
 //add fonts
 gulp.task('addFonts', function() {
-    gulp.src([
-            // './node_modules/font-awesome/fonts/*',
-            // './node_modules/bootstrap/fonts/*'
-        ])
+    gulp.src(require('./dependencies.json').fonts)
         .pipe(gulp.dest('./app/fonts'));
 });
 
